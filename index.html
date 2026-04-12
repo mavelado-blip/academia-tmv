@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Preparación oposiciones TMV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main id="publicWeb">
+    <header>
+      <h2>Oposiciones TMV</h2>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Academia</a>
+        <a href="#">Temario</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Preparación de oposiciones de la familia profesional de Transporte y Mantenimiento de Vehículos</h1>
+      <p>
+        Plataforma privada con temario, supuestos prácticos, programación didáctica,
+        defensa oral y recursos para preparar la oposición.
+      </p>
+      <button class="btn btn-main" onclick="openLogin()">Entrar en la plataforma</button>
+      <button class="btn btn-alt">Solicitar acceso</button>
+    </section>
+
+    <section class="section">
+      <h2>Preparación</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Temario</h3>
+          <p>Organización de los 67 temas para estudiar de forma estructurada.</p>
+        </div>
+        <div class="card">
+          <h3>Supuestos prácticos</h3>
+          <p>Casos de examen y resolución guiada.</p>
+        </div>
+        <div class="card">
+          <h3>Programación didáctica</h3>
+          <p>Estructura, normativa y ejemplos para la defensa.</p>
+        </div>
+        <div class="card">
+          <h3>Defensa oral</h3>
+          <p>Preparación de exposición y entrenamiento ante tribunal.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="loginModal">
+    <div class="login-box">
+      <h3>Acceso a la plataforma</h3>
+      <input id="user" type="text" placeholder="Usuario">
+      <input id="pass" type="password" placeholder="Contraseña">
+      <button class="btn btn-main" style="width:100%;" onclick="login()">Entrar</button>
+      <button class="btn btn-alt" style="width:100%;" onclick="closeLogin()">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="dashboard">
+    <aside class="sidebar">
+      <h2>Oposiciones TMV</h2>
+      <a href="#" class="active" onclick="showSection('inicioPlataforma', this)">Inicio</a>
+      <a href="#" onclick="showSection('antesPlataforma', this)">Antes de empezar</a>
+      <a href="#" onclick="showSection('temarioPlataforma', this)">Temario</a>
+      <a href="#" onclick="showSection('supuestosPlataforma', this)">Supuestos</a>
+      <a href="#" onclick="showSection('programacionPlataforma', this)">Programación</a>
+      <a href="#" onclick="showSection('recursosPlataforma', this)">Recursos</a>
+      <a href="#" onclick="logout()">Salir</a>
+    </aside>
+
+    <div class="dashboard-content">
+      <div id="inicioPlataforma">
+        <div class="dashboard-header">
+          <div>
+            <h1>Bienvenido a la plataforma</h1>
+            <p style="color:#94a3b8;">
+              Aquí dispones de una guía para preparar los temas, las prácticas y la programación.
+              Debe entenderse como una guía, ya que todo debe ser original y propio de cada uno,
+              adaptado a la forma de trabajar y útil para resolver supuestos.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>67 temas</h3>
+            <p style="color:#94a3b8;">Listado estructurado para ir incorporando contenido real.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Supuestos</h3>
+            <p style="color:#94a3b8;">Preparado para añadir casos prácticos paso a paso.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Programación</h3>
+            <p style="color:#94a3b8;">Espacio para bloques, defensa y materiales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="antesPlataforma" class="hidden">
+        <div class="panel">
+          <h2>Guía para empezar</h2>
+          <p style="color:#cbd5e1;">
+            Tenemos las pautas para tener orden y los conocimientos previos para empezar el proceso.
+          </p>
+        </div>
+      </div>
+
+      <div id="temarioPlataforma" class="hidden">
+        <div class="panel">
+          <h2>Temario completo</h2>
+          <p style="color:#94a3b8;">
+            Pulsa un tema de la izquierda para mostrar su contenido.
+          </p>
+        </div>
+
+        <div class="panel" id="panelProgresoAlumno" style="display:none;">
+          <h3>Mi progreso</h3>
+          <p id="textoProgreso">0 de 67 temas completados</p>
+
+          <div style="background:#1e293b; border-radius:10px; height:18px; overflow:hidden;">
+            <div id="barraProgreso" style="height:18px; width:0%; background:#2563eb;"></div>
+          </div>
+
+          <p id="porcentajeProgreso" style="margin-top:10px; color:#94a3b8;">0%</p>
+        </div>
+
+        <div class="temario-layout">
+          <div class="panel temario-list" id="temarioList"></div>
+
+          <div class="panel tema-content">
+            <h3 id="temaTitulo">Tema 1</h3>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+              <button class="btn btn-alt" onclick="mostrarPestana('resumen')">Resumen</button>
+              <button class="btn btn-alt" onclick="mostrarPestana('contenido')">Contenido</button>
+              <button class="btn btn-alt" onclick="mostrarPestana('esquema')">Esquema</button>
+              <button class="btn btn-alt" onclick="mostrarPestana('test')">Test</button>
+              <button class="btn btn-main" id="btnMarcarTema" onclick="marcarTemaEstudiado()">Marcar como estudiado</button>
+              <button class="btn btn-alt" id="btnDesmarcarTema" onclick="desmarcarTemaEstudiado()">Desmarcar</button>
+            </div>
+
+            <p id="estadoTemaActual" style="margin-bottom:20px; color:#94a3b8;"></p>
+
+            <div id="temaResumen" style="display:none;"></div>
+            <div id="temaContenido" style="display:none;"></div>
+            <div id="temaEsquema" style="display:none;"></div>
+            <div id="temaTest" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="supuestosPlataforma" class="hidden">
+        <div class="panel">
+          <h2>Supuestos prácticos</h2>
+          <p style="color:#cbd5e1;">
+            Aquí meteremos después casos prácticos, resoluciones y plantillas de entrenamiento.
+          </p>
+        </div>
+      </div>
+
+      <div id="programacionPlataforma" class="hidden">
+        <div class="panel">
+          <h2>Programación didáctica</h2>
+          <p style="color:#cbd5e1;">
+            Aquí irá la estructura de la programación, unidades, defensa y materiales de exposición.
+          </p>
+        </div>
+      </div>
+
+      <div id="recursosPlataforma" class="hidden">
+        <div class="panel">
+          <h2>Recursos</h2>
+          <p style="color:#cbd5e1;">
+            Espacio reservado para PDFs, esquemas, plantillas y materiales de apoyo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/temario.js"></script>
+  <script src="js/progreso.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

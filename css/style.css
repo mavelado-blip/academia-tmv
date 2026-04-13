@@ -289,4 +289,32 @@
         padding: 35px 20px;
       }
     }
+    .aviso-companeros {
+  background: #3b0a0a;
+  border: 2px solid #ef4444;
+  color: #ffffff;
+  .aviso-companeros {
+  animation: parpadeo 1.5s infinite alternate;
+}
+
+@keyframes parpadeo {
+  from { border-color: #ff0000; }
+  to { border-color: #ffffff; }
+}
+}
+
+.aviso-companeros h2 {
+  color: #ff4d4d;
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.aviso-companeros p {
+  color: #ffd7d7;
+  font-size: 22px;
+  line-height: 1.7;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
   <style>

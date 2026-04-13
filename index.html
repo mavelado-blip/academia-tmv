@@ -71,6 +71,8 @@
       <a href="#" onclick="showSection('supuestosPlataforma', this)">Supuestos</a>
       <a href="#" onclick="showSection('programacionPlataforma', this)">Programación</a>
       <a href="#" onclick="showSection('recursosPlataforma', this)">Recursos</a>
+      <a href="#" onclick="showSection('ayudaProfesorado', this)">Ayuda profesorado</a>
+      <a href="#" onclick="showSection('interaccionPlataforma', this)">Interacción</a>
       <a href="#" onclick="logout()">Salir</a>
     </aside>
 
@@ -86,7 +88,23 @@
             </p>
           </div>
         </div>
+<div class="panel aviso-companeros">
+  <h2>Mensaje para los compañeros</h2>
+  <p>
+    Así podemos hacerlo sin necesidad de reunirnos presencialmente y sin exponernos demasiado.
+    Además, no tendría por qué aparecer ningún nombre y, en principio, no supondría ningún coste.
+    Con todo el material que ya tenemos, entre todos iríamos más que sobrados y, de cara a librarnp
+    la oposición, creo que también nos podría servir mucho.
+  </p>
 
+  <p>
+    También quería plantear otra línea dentro de la plataforma: un apartado de ayuda al nuevo
+    profesorado. Como cada año empieza mucha gente y muchos llegan sin experiencia, podría ser muy
+    útil para asesorar en prácticas, teoría, ayuda para crear contenidos, hojas y memorias de
+    prácticas, entre otros recursos. Hay mucha gente que empieza y no sabe por dónde comenzar.
+    ¿Cómo lo veis?
+  </p>
+</div>
         <div class="mini-grid">
           <div class="mini-card">
             <h3>67 temas</h3>
@@ -103,15 +121,15 @@
         </div>
       </div>
 
-      <div id="antesPlataforma" class="hidden">
-        <div class="panel">
-          <h2>Guía para empezar</h2>
-          <p style="color:#cbd5e1;">
-            Tenemos las pautas para tener orden y los conocimientos previos para empezar el proceso.
-          </p>
-        </div>
-      </div>
+ <div id="antesPlataforma" class="hidden">
+  <div class="panel">
+    <h2>Guía para empezar</h2>
 
+    <p id="mensajeBienvenida" style="color:#cbd5e1; line-height:1.6;">
+      Cargando mensaje...
+    </p>
+  </div>
+</div>
       <div id="temarioPlataforma" class="hidden">
         <div class="panel">
           <h2>Temario completo</h2>
@@ -182,11 +200,100 @@
           </p>
         </div>
       </div>
+      <div id="interaccionPlataforma" class="hidden">
+  <div class="panel">
+    <h2>Interacción y consultas</h2>
+    <p style="color:#cbd5e1;">
+      En este apartado cada usuario puede escribir sus dudas, cuestiones o sugerencias
+      para llevar un seguimiento de consulta dentro de la plataforma.
+    </p>
+  </div>
+
+  <div class="panel">
+    <h3>Nueva consulta</h3>
+
+    <input
+      type="text"
+      id="tituloConsulta"
+      placeholder="Escribe un título breve"
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:white;"
+    >
+
+    <textarea
+      id="textoConsulta"
+      placeholder="Escribe aquí tu pregunta o consulta..."
+      rows="6"
+      style="width:100%; padding:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:white;"
+    ></textarea>
+
+    <div style="margin-top:15px;">
+      <button class="btn btn-main" onclick="guardarConsulta()">Guardar consulta</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Mis consultas</h3>
+    <div id="listaConsultas">
+      <p style="color:#94a3b8;">Todavía no hay consultas guardadas.</p>
+    </div>
+  </div>
+</div>
+     <div id="ayudaProfesorado" class="hidden">
+  <div class="panel">
+    <h2>Ayuda al profesorado de nueva incorporación</h2>
+
+    <p style="color:#cbd5e1; line-height:1.7;">
+      Este apartado está pensado para apoyar a aquellos profesores que se incorporan por primera vez
+      a la enseñanza en la familia profesional de Transporte y Mantenimiento de Vehículos.
+    </p>
+
+    <p style="color:#cbd5e1; line-height:1.7;">
+      Sabemos que el inicio puede resultar complicado, por lo que aquí encontrarás recursos,
+      orientaciones y ejemplos prácticos que te ayudarán a organizar tus clases y desarrollar
+      tu labor docente con seguridad.
+    </p>
+  </div>
+
+  <div class="mini-grid">
+
+    <div class="mini-card">
+      <h3>🧰 Prácticas de taller</h3>
+      <p>Ejemplos de prácticas, organización del taller, seguridad y evaluación.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>📘 Contenidos teóricos</h3>
+      <p>Cómo estructurar unidades, preparar clases y explicar contenidos técnicos.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>📝 Memorias de prácticas</h3>
+      <p>Modelos de documentos, rúbricas y ejemplos para los alumnos.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>📊 Evaluación</h3>
+      <p>Cómo evaluar, crear rúbricas y relacionar con RA y CE.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>📅 Organización</h3>
+      <p>Planificación del curso, temporalización y gestión del aula.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>💬 Experiencia docente</h3>
+      <p>Consejos reales de profesores en activo.</p>
+    </div>
+
+  </div>
+</div> 
     </div>
   </div>
 
   <script src="js/temario.js"></script>
   <script src="js/progreso.js"></script>
+  <script src="js/interaccion.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>

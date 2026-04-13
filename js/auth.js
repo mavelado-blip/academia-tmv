@@ -48,6 +48,9 @@ function login() {
 
   if (typeof renderTemario === 'function') {
     renderTemario();
+  if (typeof mostrarMensajeBienvenida === 'function') {
+  mostrarMensajeBienvenida();
+}
   }
 
   if (typeof configurarVista === 'function') {

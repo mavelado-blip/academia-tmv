@@ -1,15 +1,18 @@
 // Control de navegación entre secciones del dashboard
 function showSection(sectionId, el) {
-  const sections = [
-    'inicioPlataforma',
-    'antesPlataforma',
-    'temarioPlataforma',
-    'supuestosPlataforma',
-    'programacionPlataforma',
-    'recursosPlataforma',
-    'interaccionPlataforma',
-    'ayudaProfesorado',
-  ];
+const sections = [
+  'inicioPlataforma',
+  'antesPlataforma',
+  'temarioPlataforma',
+  'practicasPlataforma',
+  'programacionPlataforma',
+  'legislacionPlataforma',
+  'ayudaProfesorado',
+  'cofpydPlataforma',
+  'interaccionPlataforma',
+  'avisosPlataforma',
+  'recursosPlataforma'
+];
 
   // Ocultar todas
   sections.forEach(id => {
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (publicWeb) publicWeb.style.display = 'none';
     if (dashboard) dashboard.style.display = 'block';
-
+    if (typeof renderAvisos === 'function') renderAvisos();
     // Cargar contenido
     if (typeof renderTemario === 'function') renderTemario();
     if (typeof mostrarMensajeBienvenida === 'function') {
@@ -103,3 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+function mostrarSubpracticas(id) {
+  const bloques = ['tipoTestPracticas', 'desarrolloPracticas', 'realesPracticas'];
+
+  bloques.forEach(bloque => {
+    const elemento = document.getElementById(bloque);
+    if (elemento) {
+      elemento.classList.add('hidden');
+    }
+  });
+
+  const activa = document.getElementById(id);
+  if (activa) {
+    activa.classList.remove('hidden');
+  }
+}

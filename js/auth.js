@@ -59,6 +59,16 @@ function login() {
 
   if (typeof actualizarProgreso === 'function') {
     actualizarProgreso();
+  if (typeof renderConsultas === 'function') {
+  renderConsultas();
+  if (typeof renderConsultas === 'function') {
+  renderConsultas();
+}
+
+if (typeof renderAvisos === 'function') {
+  renderAvisos();
+}
+}
   }
 }
 
@@ -109,4 +119,9 @@ function configurarVista(rol) {
     if (linkTemario) linkTemario.style.display = 'block';
     if (linkAntes) linkAntes.style.display = 'block';
   }
+}
+const panelCrearAviso = document.getElementById('panelCrearAviso');
+
+if (panelCrearAviso) {
+  panelCrearAviso.style.display = (rol === 'profesor' || rol === 'admin') ? 'block' : 'none';
 }

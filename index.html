@@ -63,18 +63,22 @@
   </div>
 
   <div id="dashboard">
-    <aside class="sidebar">
-      <h2>Oposiciones TMV</h2>
-      <a href="#" class="active" onclick="showSection('inicioPlataforma', this)">Inicio</a>
-      <a href="#" onclick="showSection('antesPlataforma', this)">Antes de empezar</a>
-      <a href="#" onclick="showSection('temarioPlataforma', this)">Temario</a>
-      <a href="#" onclick="showSection('supuestosPlataforma', this)">Supuestos</a>
-      <a href="#" onclick="showSection('programacionPlataforma', this)">Programación</a>
-      <a href="#" onclick="showSection('recursosPlataforma', this)">Recursos</a>
-      <a href="#" onclick="showSection('ayudaProfesorado', this)">Ayuda profesorado</a>
-      <a href="#" onclick="showSection('interaccionPlataforma', this)">Interacción</a>
-      <a href="#" onclick="logout()">Salir</a>
-    </aside>
+<aside class="sidebar">
+  <h2>Oposiciones TMV</h2>
+
+  <a href="#" class="active" onclick="showSection('inicioPlataforma', this)">Inicio</a>
+  <a href="#" onclick="showSection('antesPlataforma', this)">Guía para empezar</a>
+  <a href="#" onclick="showSection('temarioPlataforma', this)">Temario</a>
+  <a href="#" onclick="showSection('practicasPlataforma', this)">Prácticas</a>
+  <a href="#" onclick="showSection('programacionPlataforma', this)">Programación didáctica</a>
+  <a href="#" onclick="showSection('legislacionPlataforma', this)">Legislación necesaria</a>
+  <a href="#" onclick="showSection('ayudaProfesorado', this)">Ayuda al profesorado</a>
+  <a href="#" onclick="showSection('cofpydPlataforma', this)">COFPYD / Máster profesorado</a>
+  <a href="#" onclick="showSection('interaccionPlataforma', this)">Interacción</a>
+  <a href="#" onclick="showSection('avisosPlataforma', this)">Avisos generales</a>
+  <a href="#" onclick="showSection('recursosPlataforma', this)">Recursos</a>
+  <a href="#" onclick="logout()">Salir</a>
+</aside>
 
     <div class="dashboard-content">
       <div id="inicioPlataforma">
@@ -173,7 +177,170 @@
           </div>
         </div>
       </div>
+<div id="practicasPlataforma" class="hidden">
+  <div class="panel">
+    <h2>Prácticas</h2>
+    <p style="color:#cbd5e1;">
+      Este apartado organiza las prácticas por tipo para facilitar su preparación, estudio y corrección.
+    </p>
+  </div>
 
+  <div class="panel">
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+      <button class="btn btn-alt" onclick="mostrarSubpracticas('tipoTestPracticas')">Tipo test</button>
+      <button class="btn btn-alt" onclick="mostrarSubpracticas('desarrolloPracticas')">Desarrollo</button>
+      <button class="btn btn-alt" onclick="mostrarSubpracticas('realesPracticas')">Prácticas reales</button>
+    </div>
+
+    <div id="tipoTestPracticas">
+      <h3>Tipo test</h3>
+      <p style="color:#cbd5e1; line-height:1.7;">
+        En este apartado irán preguntas tipo test para repasar conceptos, afianzar conocimientos
+        y trabajar la parte teórica de forma rápida.
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3>Bloque 1</h3>
+          <p>Cuestionarios de repaso y autoevaluación.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Bloque 2</h3>
+          <p>Preguntas por temas o por materias.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="desarrolloPracticas" class="hidden">
+      <h3>Desarrollo</h3>
+      <p style="color:#cbd5e1; line-height:1.7;">
+        En este apartado se incluirán cuestiones de desarrollo, preguntas largas y ejercicios
+        orientados a preparación escrita y razonamiento técnico.
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3>Desarrollo teórico</h3>
+          <p>Cuestiones extensas para redactar y estructurar respuestas.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Desarrollo técnico</h3>
+          <p>Preguntas aplicadas con razonamiento y vocabulario específico.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="realesPracticas" class="hidden">
+      <h3>Prácticas reales</h3>
+      <p style="color:#cbd5e1; line-height:1.7;">
+        Aquí se incluirán casos prácticos reales, resolución guiada, ejemplos de taller y
+        situaciones vinculadas a la enseñanza y la práctica profesional.
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3>Casos reales</h3>
+          <p>Supuestos prácticos basados en situaciones reales.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Resolución guiada</h3>
+          <p>Propuesta de resolución paso a paso y criterios de corrección.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="legislacionPlataforma" class="hidden">
+  <div class="panel">
+    <h2>Legislación necesaria</h2>
+    <p style="color:#cbd5e1; line-height:1.7;">
+      En este apartado se recopilará la normativa básica necesaria para la oposición, la programación
+      didáctica, la actividad docente y la organización de la Formación Profesional.
+    </p>
+  </div>
+
+  <div class="mini-grid">
+    <div class="mini-card">
+      <h3>Normativa educativa general</h3>
+      <p>Leyes educativas, currículo, organización del sistema y referencias generales.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Normativa de FP</h3>
+      <p>Legislación específica sobre Formación Profesional y enseñanzas del sector.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Programación y evaluación</h3>
+      <p>Referencias normativas útiles para unidades, evaluación, RA y CE.</p>
+    </div>
+  </div>
+</div>
+<div id="cofpydPlataforma" class="hidden">
+  <div class="panel">
+    <h2>COFPYD / Máster del profesorado</h2>
+    <p style="color:#cbd5e1; line-height:1.7;">
+      Este apartado está pensado para orientar sobre el Certificado Oficial de Formación Pedagógica
+      y Didáctica (COFPYD) y el Máster del profesorado, aclarando diferencias, requisitos y utilidad
+      para acceder a la docencia.
+    </p>
+  </div>
+
+  <div class="mini-grid">
+    <div class="mini-card">
+      <h3>¿Qué es el COFPYD?</h3>
+      <p>Formación habilitante para quienes quieren ejercer la docencia en FP sin grado universitario.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Diferencias con el máster</h3>
+      <p>Comparación entre COFPYD y Máster del profesorado según perfil de acceso.</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Requisitos y orientación</h3>
+      <p>Información útil para saber qué vía corresponde a cada candidato.</p>
+    </div>
+  </div>
+</div>
+<div id="avisosPlataforma" class="hidden">
+  <div class="panel">
+    <h2>Avisos generales</h2>
+    <p style="color:#cbd5e1;">
+      Este apartado servirá para publicar información importante, recordatorios, novedades o avisos comunes
+      para todos los usuarios de la plataforma.
+    </p>
+  </div>
+
+  <div class="panel" id="panelCrearAviso">
+    <h3>Crear aviso</h3>
+
+    <input
+      type="text"
+      id="tituloAviso"
+      placeholder="Título del aviso"
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:white;"
+    >
+
+    <textarea
+      id="textoAviso"
+      placeholder="Escribe aquí el contenido del aviso..."
+      rows="5"
+      style="width:100%; padding:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:white;"
+    ></textarea>
+
+    <div style="margin-top:15px;">
+      <button class="btn btn-main" onclick="guardarAviso()">Publicar aviso</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Avisos visibles</h3>
+    <div id="listaAvisos">
+      <p style="color:#94a3b8;">Todavía no hay avisos publicados.</p>
+    </div>
+  </div>
+</div>
       <div id="supuestosPlataforma" class="hidden">
         <div class="panel">
           <h2>Supuestos prácticos</h2>
@@ -294,6 +461,7 @@
   <script src="js/temario.js"></script>
   <script src="js/progreso.js"></script>
   <script src="js/interaccion.js"></script>
+  <script src="js/avisos.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -8,49 +8,131 @@
 </head>
 <body>
 
-  <main id="publicWeb">
-    <header>
-      <h2>Oposiciones TMV</h2>
-      <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Academia</a>
-        <a href="#">Temario</a>
-        <a href="#">Contacto</a>
-      </nav>
-    </header>
+<main id="publicWeb">
+  <header class="public-header">
+    <div class="brand-block">
+      <p class="brand-top">Familia profesional de Transporte y Mantenimiento de Vehículos</p>
+      <h2>Plataforma TMV</h2>
+    </div>
 
-    <section class="hero">
-      <h1>Preparación de oposiciones de la familia profesional de Transporte y Mantenimiento de Vehículos</h1>
-      <p>
-        Plataforma privada con temario, supuestos prácticos, programación didáctica,
-        defensa oral y recursos para preparar la oposición.
+    <nav class="public-nav">
+      <button class="btn btn-main" onclick="openLogin()">Entrar en plataforma</button>
+      <button class="btn btn-alt" onclick="openSolicitudAcceso()">Solicitar acceso</button>
+      <button class="btn btn-ghost" onclick="openContactoPublico()">Contacto</button>
+    </nav>
+  </header>
+
+  <section class="hero hero-premium">
+    <div class="hero-copy">
+      <span class="hero-badge">Preparación especializada · acompañamiento real · enfoque práctico</span>
+
+      <h1>Preparación integral para oposiciones TMV y apoyo profesional para el aula y el máster</h1>
+
+      <p class="hero-lead">
+        Un espacio diseñado para opositores y profesorado de la familia profesional de Transporte y
+        Mantenimiento de Vehículos, con una línea de trabajo clara, materiales estructurados y una
+        orientación práctica basada en experiencia real.
       </p>
-      <button class="btn btn-main" onclick="openLogin()">Entrar en la plataforma</button>
-      <button class="btn btn-alt">Solicitar acceso</button>
-    </section>
 
-    <section class="section">
-      <h2>Preparación</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Temario</h3>
-          <p>Organización de los 67 temas para estudiar de forma estructurada.</p>
+      <div class="hero-actions">
+        <button class="btn btn-main" onclick="openLogin()">Entrar en la plataforma</button>
+        <button class="btn btn-alt" onclick="openSolicitudAcceso()">Solicitar acceso</button>
+      </div>
+
+      <div class="hero-points">
+        <div class="hero-point">
+          <strong>Preparación oposición</strong>
+          <span>Temario, prácticas, programación didáctica, orientación y seguimiento.</span>
         </div>
-        <div class="card">
-          <h3>Supuestos prácticos</h3>
-          <p>Casos de examen y resolución guiada.</p>
+
+        <div class="hero-point">
+          <strong>Ayuda en el aula</strong>
+          <span>Recursos para profesorado, práctica docente, evaluación y organización.</span>
         </div>
-        <div class="card">
-          <h3>Programación didáctica</h3>
-          <p>Estructura, normativa y ejemplos para la defensa.</p>
-        </div>
-        <div class="card">
-          <h3>Defensa oral</h3>
-          <p>Preparación de exposición y entrenamiento ante tribunal.</p>
+
+        <div class="hero-point">
+          <strong>Ayuda en el máster / COFPYD</strong>
+          <span>Apoyo en documentación, estructura de trabajos y orientación formativa.</span>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+
+    <div class="hero-side-card">
+      <h3>Qué encontrarás</h3>
+      <ul>
+        <li>67 temas organizados para crecimiento progresivo</li>
+        <li>Supuestos prácticos y prácticas reales</li>
+        <li>Programación didáctica y defensa</li>
+        <li>Legislación útil y recursos de apoyo</li>
+        <li>Espacio de interacción y seguimiento</li>
+      </ul>
+
+      <div class="trust-box">
+        <h4>Enfoque de trabajo</h4>
+        <p>
+          La plataforma está pensada para transmitir seriedad, orden y utilidad real. No se trata
+          solo de acumular materiales, sino de estructurar una preparación útil, consistente y
+          aplicable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section public-section">
+    <div class="section-heading">
+      <h2>Una plataforma pensada para avanzar con criterio</h2>
+      <p>
+        El objetivo es ofrecer una base sólida tanto para quien prepara la oposición como para quien
+        necesita apoyo docente, orientación práctica o ayuda en su formación pedagógica.
+      </p>
+    </div>
+
+    <div class="cards cards-public">
+      <div class="card card-public">
+        <h3>Preparación de oposición</h3>
+        <p>
+          Estructuración del estudio, enfoque del temario, prácticas, programación y materiales de trabajo.
+        </p>
+      </div>
+
+      <div class="card card-public">
+        <h3>Ayuda al profesorado</h3>
+        <p>
+          Recursos para aula, evaluación, organización de prácticas, memorias y apoyo al docente de nueva incorporación.
+        </p>
+      </div>
+
+      <div class="card card-public">
+        <h3>Apoyo en máster / COFPYD</h3>
+        <p>
+          Orientación en tareas, planteamiento de trabajos, estructura documental y acompañamiento formativo.
+        </p>
+      </div>
+
+      <div class="card card-public">
+        <h3>Seguimiento y comunicación</h3>
+        <p>
+          Canal ordenado para consultas, avisos, revisión de avances y organización del trabajo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section public-section alt-section">
+    <div class="section-heading">
+      <h2>Solicitar acceso</h2>
+      <p>
+        Si quieres incorporarte a la plataforma, puedes enviarnos una solicitud con tus datos y tus necesidades.
+        Esto nos permitirá organizar mejor el acceso y orientar el contenido.
+      </p>
+    </div>
+
+    <div class="cta-panel">
+      <button class="btn btn-main" onclick="openSolicitudAcceso()">Completar solicitud</button>
+      <button class="btn btn-ghost" onclick="openContactoPublico()">Hacer una consulta previa</button>
+    </div>
+  </section>
+</main>
 
   <div id="loginModal">
     <div class="login-box">
@@ -61,7 +143,70 @@
       <button class="btn btn-alt" style="width:100%;" onclick="closeLogin()">Cerrar</button>
     </div>
   </div>
+<div id="solicitudModal" class="modal-publico">
+  <div class="modal-box-publico">
+    <h3>Solicitud de acceso</h3>
+    <p class="modal-intro">
+      Completa este formulario para solicitar acceso a la plataforma.
+    </p>
 
+    <div class="form-grid">
+      <input id="solNombre" type="text" placeholder="Nombre">
+      <input id="solApellidos" type="text" placeholder="Apellidos">
+      <input id="solCorreo" type="email" placeholder="Correo electrónico">
+      <input id="solTelefono" type="text" placeholder="Teléfono (opcional)">
+      <input id="solEspecialidad" type="text" placeholder="Especialidad / perfil">
+      <input id="solComunidad" type="text" placeholder="Comunidad autónoma en la que te presentas">
+    </div>
+
+    <div class="check-group">
+      <label><input type="checkbox" id="chkOposicion"> Preparación oposición</label>
+      <label><input type="checkbox" id="chkAula"> Ayuda en el aula</label>
+      <label><input type="checkbox" id="chkMaster"> Ayuda en máster / COFPYD</label>
+    </div>
+
+    <textarea
+      id="solNecesidades"
+      rows="5"
+      placeholder="Cuéntanos qué necesitas exactamente, en qué punto estás y qué tipo de ayuda buscas"
+    ></textarea>
+
+    <textarea
+      id="solObservaciones"
+      rows="4"
+      placeholder="Observaciones adicionales (opcional)"
+    ></textarea>
+
+    <div class="modal-actions">
+      <button class="btn btn-main" onclick="guardarSolicitudAcceso()">Enviar solicitud</button>
+      <button class="btn btn-alt" onclick="closeSolicitudAcceso()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<div id="contactoModal" class="modal-publico">
+  <div class="modal-box-publico">
+    <h3>Contacto</h3>
+    <p class="modal-intro">
+      Puedes hacer una consulta sin necesidad de iniciar sesión.
+    </p>
+
+    <input id="contactoNombre" type="text" placeholder="Nombre y apellidos">
+    <input id="contactoCorreo" type="email" placeholder="Correo electrónico">
+    <input id="contactoAsunto" type="text" placeholder="Asunto">
+
+    <textarea
+      id="contactoMensaje"
+      rows="6"
+      placeholder="Escribe aquí tu consulta"
+    ></textarea>
+
+    <div class="modal-actions">
+      <button class="btn btn-main" onclick="guardarMensajeContacto()">Enviar mensaje</button>
+      <button class="btn btn-alt" onclick="closeContactoPublico()">Cerrar</button>
+    </div>
+  </div>
+</div>
   <div id="dashboard">
 <aside class="sidebar">
   <h2>Oposiciones TMV</h2>
@@ -77,6 +222,7 @@
   <a href="#" onclick="showSection('interaccionPlataforma', this)">Interacción</a>
   <a href="#" onclick="showSection('avisosPlataforma', this)">Avisos generales</a>
   <a href="#" onclick="showSection('recursosPlataforma', this)">Recursos</a>
+  <a href="#" onclick="showSection('adminPlataforma', this)">Panel admin</a>
   <a href="#" onclick="logout()">Salir</a>
 </aside>
 
@@ -358,7 +504,63 @@
           </p>
         </div>
       </div>
+<div id="adminPlataforma" class="hidden">
+  <div class="panel">
+    <h2>Panel de administración</h2>
+    <p style="color:#cbd5e1;">
+      Este apartado está reservado para la gestión general de la plataforma.
+    </p>
+  </div>
 
+  <div class="mini-grid">
+    <div class="mini-card">
+      <h3>Usuarios</h3>
+      <p id="resumenUsuarios">Cargando usuarios...</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Consultas</h3>
+      <p id="resumenConsultas">Cargando consultas...</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Avisos</h3>
+      <p id="resumenAvisos">Cargando avisos...</p>
+    </div>
+
+    <div class="mini-card">
+      <h3>Temas</h3>
+      <p>67 temas estructurados en la plataforma.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Usuarios registrados</h3>
+    <div id="listaUsuariosAdmin">
+      <p style="color:#94a3b8;">Todavía no hay datos.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Consultas registradas</h3>
+    <div id="listaConsultasAdmin">
+      <p style="color:#94a3b8;">Todavía no hay consultas registradas.</p>
+    </div>
+  </div>
+<div class="panel">
+  <h3>Solicitudes de acceso</h3>
+  <div id="listaSolicitudesAdmin">
+    <p style="color:#94a3b8;">Todavía no hay solicitudes registradas.</p>
+  </div>
+</div>
+
+<div class="panel">
+  <h3>Mensajes de contacto</h3>
+  <div id="listaContactosAdmin">
+    <p style="color:#94a3b8;">Todavía no hay mensajes registrados.</p>
+  </div>
+</div>  
+</div>
       <div id="recursosPlataforma" class="hidden">
         <div class="panel">
           <h2>Recursos</h2>
@@ -462,6 +664,8 @@
   <script src="js/progreso.js"></script>
   <script src="js/interaccion.js"></script>
   <script src="js/avisos.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/publico.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>

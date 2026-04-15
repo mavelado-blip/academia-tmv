@@ -27,7 +27,7 @@ function login() {
   let rol = '';
 
   if (user === 'admin' && pass === '1234') {
-    rol = 'profesor';
+    rol = 'admin';
   } else if ((user === 'JD' || user === 'LR') && pass === '1111') {
     rol = 'alumno';
   } else {
@@ -48,9 +48,10 @@ function login() {
 
   if (typeof renderTemario === 'function') {
     renderTemario();
+  }
+
   if (typeof mostrarMensajeBienvenida === 'function') {
-  mostrarMensajeBienvenida();
-}
+    mostrarMensajeBienvenida();
   }
 
   if (typeof configurarVista === 'function') {
@@ -59,16 +60,18 @@ function login() {
 
   if (typeof actualizarProgreso === 'function') {
     actualizarProgreso();
-  if (typeof renderConsultas === 'function') {
-  renderConsultas();
-  if (typeof renderConsultas === 'function') {
-  renderConsultas();
-}
+  }
 
-if (typeof renderAvisos === 'function') {
-  renderAvisos();
-}
-}
+  if (typeof renderConsultas === 'function') {
+    renderConsultas();
+  }
+
+  if (typeof renderAvisos === 'function') {
+    renderAvisos();
+  }
+
+  if (typeof renderPanelAdmin === 'function') {
+    renderPanelAdmin();
   }
 }
 
@@ -93,35 +96,39 @@ function logout() {
 
 function configurarVista(rol) {
   const panelProgreso = document.getElementById('panelProgresoAlumno');
+  const panelCrearAviso = document.getElementById('panelCrearAviso');
 
-  if (panelProgreso) {
-    panelProgreso.style.display = rol === 'alumno' ? 'block' : 'none';
-  }
-
+  const linkAdmin = document.querySelector("a[onclick*='adminPlataforma']");
   const linkProgramacion = document.querySelector("a[onclick*='programacionPlataforma']");
   const linkRecursos = document.querySelector("a[onclick*='recursosPlataforma']");
   const linkSupuestos = document.querySelector("a[onclick*='supuestosPlataforma']");
   const linkTemario = document.querySelector("a[onclick*='temarioPlataforma']");
   const linkAntes = document.querySelector("a[onclick*='antesPlataforma']");
+  const linkAvisos = document.querySelector("a[onclick*='avisosPlataforma']");
 
   if (rol === 'alumno') {
+    if (panelProgreso) panelProgreso.style.display = 'block';
+    if (panelCrearAviso) panelCrearAviso.style.display = 'none';
+
+    if (linkAdmin) linkAdmin.style.display = 'none';
     if (linkProgramacion) linkProgramacion.style.display = 'none';
     if (linkRecursos) linkRecursos.style.display = 'none';
     if (linkSupuestos) linkSupuestos.style.display = 'block';
     if (linkTemario) linkTemario.style.display = 'block';
     if (linkAntes) linkAntes.style.display = 'block';
+    if (linkAvisos) linkAvisos.style.display = 'block';
   }
 
-  if (rol === 'profesor') {
+  if (rol === 'admin') {
+    if (panelProgreso) panelProgreso.style.display = 'none';
+    if (panelCrearAviso) panelCrearAviso.style.display = 'block';
+
+    if (linkAdmin) linkAdmin.style.display = 'block';
     if (linkProgramacion) linkProgramacion.style.display = 'block';
     if (linkRecursos) linkRecursos.style.display = 'block';
     if (linkSupuestos) linkSupuestos.style.display = 'block';
     if (linkTemario) linkTemario.style.display = 'block';
     if (linkAntes) linkAntes.style.display = 'block';
+    if (linkAvisos) linkAvisos.style.display = 'block';
   }
-}
-const panelCrearAviso = document.getElementById('panelCrearAviso');
-
-if (panelCrearAviso) {
-  panelCrearAviso.style.display = (rol === 'profesor' || rol === 'admin') ? 'block' : 'none';
 }
